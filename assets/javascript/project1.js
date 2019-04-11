@@ -39,7 +39,7 @@ $(document).ready(function () {
             soda: sodaCount
         });
         $("#showMe").html("<img src='../assets/noSoda.gif'/>")
-        $("#canCount").remove("<img src='../assets/colaCan.jpg' style='height:64px' />")
+        $("#canCount").remove("<img src='./assets/colaCan.jpg' style='height:64px' />")
 
     });
 
@@ -65,9 +65,9 @@ $(document).ready(function () {
 function addCan(){
     if(sodaCount === 12){
         $("#canCount").empty();
-        $("#canCount").append("<img src='../assets/12pack.jpg' style='height:64px' />") 
+        $("#canCount").append("<img src='./assets/12pack.jpg' style='height:64px' />") 
     }else{
-    $("#canCount").append("<img src='../assets/colaCan.jpg' style='height:64px' />")
+    $("#canCount").append("<img src='./assets/colaCan.jpg' style='height:64px' />")
     }
 }
 
