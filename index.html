@@ -11,16 +11,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/javascript/project1.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <title>Soda Counter</title>
 </head>
 <body>
 
         <div class="container">
 
-                <div class="jumbotron display-4 text-center bg-dark">Number of Sodas today: <span  id="sodaCount"></span></div>
+                <div class="jumbotron display-4 text-center bg-dark">Number of Sodas today: <span  id="sodaCount"></span> </br>
+                Last One At <span id="time"></span></div>
+                
                 <div class="text-center mt-5">
+                        <div id="showMe"></div>
+                        <div id="canCount"></div>
                     
                 <button type="button" id="sodaAdd" class="btn btn-success m-5">Soda +1</button>
+                <button type="button" id="sodaReset" class="btn btn-warning m-5">Reset - New Day</button>
                 <button type="button" id="sodaSub" class="btn btn-success m-5">Soda -1</button>
                     
                 </div>

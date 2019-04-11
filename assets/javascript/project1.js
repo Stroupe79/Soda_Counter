@@ -20,10 +20,16 @@ $(document).ready(function () {
     $("#sodaAdd").on("click", function(){
         console.log("click")
         sodaCount++;
+        let time = moment().format("hh:mm");
+        let date = moment().format("MM/DD/YYYY");
+        $("#showMe").html("<img src='../assets/soda.gif'/>")
         database.ref().set({
-            soda: sodaCount
+            soda: sodaCount,
+            time: time,
+            date: date
         });
-
+        $("#time").text(time);
+        addCan();
     });
 
     $("#sodaSub").on("click", function(){
@@ -32,14 +38,37 @@ $(document).ready(function () {
         database.ref().set({
             soda: sodaCount
         });
+        $("#showMe").html("<img src='../assets/noSoda.gif'/>")
+        $("#canCount").remove("<img src='../assets/colaCan.jpg' style='height:64px' />")
+
     });
+
+    $("#sodaReset").on("click", function(){
+        console.log("click")
+        sodaCount--;
+        database.ref().set({
+            soda: 0
+        });
+        $("#showMe").html("");
+        $("#canCount").html("");
+    });
+
 
     database.ref().on("value", function(snapshot){
         console.log(snapshot.val().soda);
         sodaCount = snapshot.val().soda;
-        $("#sodaCount").text(snapshot.val().soda)
+        $("#sodaCount").text(snapshot.val().soda);
+        $("#time").text(snapshot.val().time);
     })
 
+function addCan(){
+    if(sodaCount === 12){
+        $("#canCount").empty();
+        $("#canCount").append("<img src='../assets/12pack.jpg' style='height:64px' />") 
+    }else{
+    $("#canCount").append("<img src='../assets/colaCan.jpg' style='height:64px' />")
+    }
+}
 
 
 

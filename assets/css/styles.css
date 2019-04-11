@@ -2,3 +2,8 @@
     color: white;
     margin-top: 5%;
 }
+
+.btn {
+    border-right: 2px solid green;
+    border-bottom: 2px solid green;
+}
