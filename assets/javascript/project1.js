@@ -22,7 +22,7 @@ $(document).ready(function () {
         sodaCount++;
         let time = moment().format("hh:mm");
         let date = moment().format("MM/DD/YYYY");
-        $("#showMe").html("<img src='../assets/soda.gif'/>")
+        $("#showMe").html("<img src='./assets/soda.gif'/>")
         database.ref().set({
             soda: sodaCount,
             time: time,
@@ -38,7 +38,7 @@ $(document).ready(function () {
         database.ref().set({
             soda: sodaCount
         });
-        $("#showMe").html("<img src='../assets/noSoda.gif'/>")
+        $("#showMe").html("<img src='./assets/noSoda.gif'/>")
         $("#canCount").remove("<img src='./assets/colaCan.jpg' style='height:64px' />")
 
     });
